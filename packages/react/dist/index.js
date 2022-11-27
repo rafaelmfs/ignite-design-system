@@ -31,6 +31,7 @@ __export(src_exports, {
   Button: () => Button,
   Heading: () => Heading,
   Text: () => Text,
+  TextArea: () => TextArea,
   TextInput: () => TextInput
 });
 module.exports = __toCommonJS(src_exports);
@@ -370,6 +371,32 @@ function TextInput({ prefix, ...props }) {
     ]
   });
 }
+
+// src/components/TextArea.tsx
+var TextArea = styled("textarea", {
+  backgroundColor: "$gray900",
+  padding: "$3 $4",
+  borderRadius: "$sm",
+  boxSizing: "border-box",
+  border: "2px solid $gray900",
+  fontFamily: "$default",
+  fontSize: "$sm",
+  color: "$white",
+  fontWeight: "regular",
+  resize: "vertical",
+  minHeight: 80,
+  "&:focus": {
+    outline: 0,
+    borderColor: "$ignite300"
+  },
+  "&:disabled": {
+    opacity: 0.6,
+    cursor: "not-allowed"
+  },
+  "&:placeholder": {
+    cursor: "$gray400"
+  }
+});
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Avatar,
@@ -377,5 +404,6 @@ function TextInput({ prefix, ...props }) {
   Button,
   Heading,
   Text,
+  TextArea,
   TextInput
 });
