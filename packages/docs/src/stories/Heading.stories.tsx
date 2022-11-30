@@ -7,6 +7,15 @@ export default {
   args: {
     children:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore consequatur, pariatur laudantium nesciunt quis inventore corporis unde expedita, recusandae dolore ipsa, obcaecati alias aliquid possimus. Officia est aliquid corrupti libero.',
+    size: 'md',
+  },
+  argTypes: {
+    size: {
+      options: ['sm', 'md', 'lg', '2xl', '4xl', '5xl', '6xl'],
+      control: {
+        type: 'inline-radio',
+      },
+    },
   },
 } as Meta
 
