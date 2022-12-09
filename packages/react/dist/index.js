@@ -1,10 +1,39 @@
 "use strict";
 var __create = Object.create;
 var __defProp = Object.defineProperty;
+var __defProps = Object.defineProperties;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
 var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
 var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
+var __objRest = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && __getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
 var __export = (target, all) => {
   for (var name in all)
     __defProp(target, name, { get: all[name], enumerable: true });
@@ -123,11 +152,10 @@ var {
   createTheme,
   config
 } = (0, import_react.createStitches)({
-  themeMap: {
-    ...import_react.defaultThemeMap,
+  themeMap: __spreadProps(__spreadValues({}, import_react.defaultThemeMap), {
     height: "space",
     width: "space"
-  },
+  }),
   theme: {
     colors,
     fontSizes,
@@ -233,17 +261,10 @@ var AvatarFallback = styled(Avatar.Fallback, {
 var import_phosphor_react = require("phosphor-react");
 var import_jsx_runtime = require("react/jsx-runtime");
 function Avatar2(props) {
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(AvatarContainer, {
-    children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AvatarImage, {
-        ...props
-      }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AvatarFallback, {
-        delayMs: 600,
-        children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_phosphor_react.User, {})
-      })
-    ]
-  });
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(AvatarContainer, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AvatarImage, __spreadValues({}, props)),
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AvatarFallback, { delayMs: 600, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_phosphor_react.User, {}) })
+  ] });
 }
 Avatar2.displayName = "Avatar";
 
@@ -365,17 +386,12 @@ var Input = styled("input", {
 
 // src/components/TextInput/index.tsx
 var import_jsx_runtime2 = require("react/jsx-runtime");
-function TextInput({ prefix, ...props }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(TextInputContainer, {
-    children: [
-      !!prefix && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Prefix, {
-        children: prefix
-      }),
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Input, {
-        ...props
-      })
-    ]
-  });
+function TextInput(_a) {
+  var _b = _a, { prefix } = _b, props = __objRest(_b, ["prefix"]);
+  return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(TextInputContainer, { children: [
+    !!prefix && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Prefix, { children: prefix }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Input, __spreadValues({}, props))
+  ] });
 }
 TextInput.displayName = "TextInput";
 
@@ -463,15 +479,7 @@ var CheckboxIndicator = styled(Checkbox.Indicator, {
 // src/components/Checkbox/index.tsx
 var import_jsx_runtime3 = require("react/jsx-runtime");
 function Checkbox2(props) {
-  return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(CheckboxContainer, {
-    ...props,
-    children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(CheckboxIndicator, {
-      asChild: true,
-      children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_phosphor_react2.Check, {
-        weight: "bold"
-      })
-    })
-  });
+  return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(CheckboxContainer, __spreadProps(__spreadValues({}, props), { children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(CheckboxIndicator, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_phosphor_react2.Check, { weight: "bold" }) }) }));
 }
 Checkbox2.displayName = "Checkbox";
 
@@ -505,26 +513,17 @@ var Step = styled("div", {
 // src/components/MultiStep/index.tsx
 var import_jsx_runtime4 = require("react/jsx-runtime");
 function MultiStep({ size, currentStep = 1 }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(MultiStepContainer, {
-    children: [
-      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(Label, {
-        children: [
-          "Passo ",
-          currentStep,
-          " de ",
-          size
-        ]
-      }),
-      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Steps, {
-        css: { "--steps-size": size },
-        children: Array.from({ length: size }, (_, i) => i + 1).map((step) => {
-          return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Step, {
-            active: currentStep >= step
-          }, step);
-        })
-      })
-    ]
-  });
+  return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(MultiStepContainer, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(Label, { children: [
+      "Passo ",
+      currentStep,
+      " de ",
+      size
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Steps, { css: { "--steps-size": size }, children: Array.from({ length: size }, (_, i) => i + 1).map((step) => {
+      return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Step, { active: currentStep >= step }, step);
+    }) })
+  ] });
 }
 MultiStep.displayName = "MultiStep";
 // Annotate the CommonJS export names for ESM import in node:

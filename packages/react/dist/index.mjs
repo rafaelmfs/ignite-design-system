@@ -1,3 +1,35 @@
+var __defProp = Object.defineProperty;
+var __defProps = Object.defineProperties;
+var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
+var __objRest = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && __getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+
 // ../tokens/dist/index.mjs
 var colors = {
   white: "#FFF",
@@ -83,11 +115,10 @@ var {
   createTheme,
   config
 } = createStitches({
-  themeMap: {
-    ...defaultThemeMap,
+  themeMap: __spreadProps(__spreadValues({}, defaultThemeMap), {
     height: "space",
     width: "space"
-  },
+  }),
   theme: {
     colors,
     fontSizes,
@@ -193,17 +224,10 @@ var AvatarFallback = styled(Avatar.Fallback, {
 import { User } from "phosphor-react";
 import { jsx, jsxs } from "react/jsx-runtime";
 function Avatar2(props) {
-  return /* @__PURE__ */ jsxs(AvatarContainer, {
-    children: [
-      /* @__PURE__ */ jsx(AvatarImage, {
-        ...props
-      }),
-      /* @__PURE__ */ jsx(AvatarFallback, {
-        delayMs: 600,
-        children: /* @__PURE__ */ jsx(User, {})
-      })
-    ]
-  });
+  return /* @__PURE__ */ jsxs(AvatarContainer, { children: [
+    /* @__PURE__ */ jsx(AvatarImage, __spreadValues({}, props)),
+    /* @__PURE__ */ jsx(AvatarFallback, { delayMs: 600, children: /* @__PURE__ */ jsx(User, {}) })
+  ] });
 }
 Avatar2.displayName = "Avatar";
 
@@ -325,17 +349,12 @@ var Input = styled("input", {
 
 // src/components/TextInput/index.tsx
 import { jsx as jsx2, jsxs as jsxs2 } from "react/jsx-runtime";
-function TextInput({ prefix, ...props }) {
-  return /* @__PURE__ */ jsxs2(TextInputContainer, {
-    children: [
-      !!prefix && /* @__PURE__ */ jsx2(Prefix, {
-        children: prefix
-      }),
-      /* @__PURE__ */ jsx2(Input, {
-        ...props
-      })
-    ]
-  });
+function TextInput(_a) {
+  var _b = _a, { prefix } = _b, props = __objRest(_b, ["prefix"]);
+  return /* @__PURE__ */ jsxs2(TextInputContainer, { children: [
+    !!prefix && /* @__PURE__ */ jsx2(Prefix, { children: prefix }),
+    /* @__PURE__ */ jsx2(Input, __spreadValues({}, props))
+  ] });
 }
 TextInput.displayName = "TextInput";
 
@@ -423,15 +442,7 @@ var CheckboxIndicator = styled(Checkbox.Indicator, {
 // src/components/Checkbox/index.tsx
 import { jsx as jsx3 } from "react/jsx-runtime";
 function Checkbox2(props) {
-  return /* @__PURE__ */ jsx3(CheckboxContainer, {
-    ...props,
-    children: /* @__PURE__ */ jsx3(CheckboxIndicator, {
-      asChild: true,
-      children: /* @__PURE__ */ jsx3(Check, {
-        weight: "bold"
-      })
-    })
-  });
+  return /* @__PURE__ */ jsx3(CheckboxContainer, __spreadProps(__spreadValues({}, props), { children: /* @__PURE__ */ jsx3(CheckboxIndicator, { asChild: true, children: /* @__PURE__ */ jsx3(Check, { weight: "bold" }) }) }));
 }
 Checkbox2.displayName = "Checkbox";
 
@@ -465,26 +476,17 @@ var Step = styled("div", {
 // src/components/MultiStep/index.tsx
 import { jsx as jsx4, jsxs as jsxs3 } from "react/jsx-runtime";
 function MultiStep({ size, currentStep = 1 }) {
-  return /* @__PURE__ */ jsxs3(MultiStepContainer, {
-    children: [
-      /* @__PURE__ */ jsxs3(Label, {
-        children: [
-          "Passo ",
-          currentStep,
-          " de ",
-          size
-        ]
-      }),
-      /* @__PURE__ */ jsx4(Steps, {
-        css: { "--steps-size": size },
-        children: Array.from({ length: size }, (_, i) => i + 1).map((step) => {
-          return /* @__PURE__ */ jsx4(Step, {
-            active: currentStep >= step
-          }, step);
-        })
-      })
-    ]
-  });
+  return /* @__PURE__ */ jsxs3(MultiStepContainer, { children: [
+    /* @__PURE__ */ jsxs3(Label, { children: [
+      "Passo ",
+      currentStep,
+      " de ",
+      size
+    ] }),
+    /* @__PURE__ */ jsx4(Steps, { css: { "--steps-size": size }, children: Array.from({ length: size }, (_, i) => i + 1).map((step) => {
+      return /* @__PURE__ */ jsx4(Step, { active: currentStep >= step }, step);
+    }) })
+  ] });
 }
 MultiStep.displayName = "MultiStep";
 export {
