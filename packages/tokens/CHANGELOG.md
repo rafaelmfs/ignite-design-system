@@ -1,5 +1,11 @@
 # @rafaelmfs-ignite-ui/tokens
 
+## 2.1.0
+
+### Minor Changes
+
+- Test CI/CD
+
 ## 2.0.0
 
 ### Major Changes
