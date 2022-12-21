@@ -1,9 +1,10 @@
 import * as _stitches_react_types_styled_component from '@stitches/react/types/styled-component';
 import * as _stitches_react_types_css_util from '@stitches/react/types/css-util';
 import * as react from 'react';
-import { ComponentProps, ElementType } from 'react';
+import { ComponentProps, ElementType, ReactNode } from 'react';
 import * as Avatar$1 from '@radix-ui/react-avatar';
 import * as Checkbox$1 from '@radix-ui/react-checkbox';
+import * as Tooltip$1 from '@radix-ui/react-tooltip';
 
 declare const Box: _stitches_react_types_styled_component.StyledComponent<"div", {}, {}, _stitches_react_types_css_util.CSS<{}, {
     colors: {
@@ -21,6 +22,7 @@ declare const Box: _stitches_react_types_styled_component.StyledComponent<"div",
         ignite500: string;
         ignite700: string;
         ignite900: string;
+        TEST: string;
     };
     fontSizes: {
         xxs: string;
@@ -45,6 +47,7 @@ declare const Box: _stitches_react_types_styled_component.StyledComponent<"div",
     fonts: {
         default: string;
         code: string;
+        inter: string;
     };
     lineHeights: {
         shorter: string;
@@ -228,6 +231,7 @@ declare const Text: _stitches_react_types_styled_component.StyledComponent<"p", 
         ignite500: string;
         ignite700: string;
         ignite900: string;
+        TEST: string;
     };
     fontSizes: {
         xxs: string;
@@ -252,6 +256,7 @@ declare const Text: _stitches_react_types_styled_component.StyledComponent<"p", 
     fonts: {
         default: string;
         code: string;
+        inter: string;
     };
     lineHeights: {
         shorter: string;
@@ -436,6 +441,7 @@ declare const Heading: _stitches_react_types_styled_component.StyledComponent<"h
         ignite500: string;
         ignite700: string;
         ignite900: string;
+        TEST: string;
     };
     fontSizes: {
         xxs: string;
@@ -460,6 +466,7 @@ declare const Heading: _stitches_react_types_styled_component.StyledComponent<"h
     fonts: {
         default: string;
         code: string;
+        inter: string;
     };
     lineHeights: {
         shorter: string;
@@ -642,6 +649,7 @@ declare const AvatarImage: _stitches_react_types_styled_component.StyledComponen
         ignite500: string;
         ignite700: string;
         ignite900: string;
+        TEST: string;
     };
     fontSizes: {
         xxs: string;
@@ -666,6 +674,7 @@ declare const AvatarImage: _stitches_react_types_styled_component.StyledComponen
     fonts: {
         default: string;
         code: string;
+        inter: string;
     };
     lineHeights: {
         shorter: string;
@@ -855,6 +864,7 @@ declare const Button: _stitches_react_types_styled_component.StyledComponent<"bu
         ignite500: string;
         ignite700: string;
         ignite900: string;
+        TEST: string;
     };
     fontSizes: {
         xxs: string;
@@ -879,6 +889,7 @@ declare const Button: _stitches_react_types_styled_component.StyledComponent<"bu
     fonts: {
         default: string;
         code: string;
+        inter: string;
     };
     lineHeights: {
         shorter: string;
@@ -1061,6 +1072,7 @@ declare const Input: _stitches_react_types_styled_component.StyledComponent<"inp
         ignite500: string;
         ignite700: string;
         ignite900: string;
+        TEST: string;
     };
     fontSizes: {
         xxs: string;
@@ -1085,6 +1097,7 @@ declare const Input: _stitches_react_types_styled_component.StyledComponent<"inp
     fonts: {
         default: string;
         code: string;
+        inter: string;
     };
     lineHeights: {
         shorter: string;
@@ -1272,6 +1285,7 @@ declare const TextArea: _stitches_react_types_styled_component.StyledComponent<"
         ignite500: string;
         ignite700: string;
         ignite900: string;
+        TEST: string;
     };
     fontSizes: {
         xxs: string;
@@ -1296,6 +1310,7 @@ declare const TextArea: _stitches_react_types_styled_component.StyledComponent<"
     fonts: {
         default: string;
         code: string;
+        inter: string;
     };
     lineHeights: {
         shorter: string;
@@ -1477,6 +1492,7 @@ declare const CheckboxContainer: _stitches_react_types_styled_component.StyledCo
         ignite500: string;
         ignite700: string;
         ignite900: string;
+        TEST: string;
     };
     fontSizes: {
         xxs: string;
@@ -1501,6 +1517,7 @@ declare const CheckboxContainer: _stitches_react_types_styled_component.StyledCo
     fonts: {
         default: string;
         code: string;
+        inter: string;
     };
     lineHeights: {
         shorter: string;
@@ -1687,6 +1704,7 @@ declare const MultiStepContainer: _stitches_react_types_styled_component.StyledC
         ignite500: string;
         ignite700: string;
         ignite900: string;
+        TEST: string;
     };
     fontSizes: {
         xxs: string;
@@ -1711,6 +1729,7 @@ declare const MultiStepContainer: _stitches_react_types_styled_component.StyledC
     fonts: {
         default: string;
         code: string;
+        inter: string;
     };
     lineHeights: {
         shorter: string;
@@ -1883,4 +1902,425 @@ declare namespace MultiStep {
     var displayName: string;
 }
 
-export { Avatar, AvatarProps, Box, BoxProps, Button, ButtonProps, Checkbox, CheckboxProps, Heading, HeadingProps, MultiStep, MultiStepProps, Text, TextArea, TextAreaProps, TextInput, TextInputProps, TextProps };
+declare const TooltipContainer: _stitches_react_types_styled_component.StyledComponent<react.FC<Tooltip$1.TooltipProps>, {}, {}, _stitches_react_types_css_util.CSS<{}, {
+    colors: {
+        white: string;
+        black: string;
+        gray100: string;
+        gray200: string;
+        gray400: string;
+        gray500: string;
+        gray600: string;
+        gray700: string;
+        gray800: string;
+        gray900: string;
+        ignite300: string;
+        ignite500: string;
+        ignite700: string;
+        ignite900: string;
+        TEST: string;
+    };
+    fontSizes: {
+        xxs: string;
+        xs: string;
+        sm: string;
+        md: string;
+        lg: string;
+        xl: string;
+        '2xl': string;
+        '4xl': string;
+        '5xl': string;
+        '6xl': string;
+        '7xl': string;
+        '8xl': string;
+        '9xl': string;
+    };
+    fontWeights: {
+        regular: string;
+        medium: string;
+        bold: string;
+    };
+    fonts: {
+        default: string;
+        code: string;
+        inter: string;
+    };
+    lineHeights: {
+        shorter: string;
+        short: string;
+        base: string;
+        tall: string;
+    };
+    radii: {
+        px: string;
+        xs: string;
+        sm: string;
+        md: string;
+        lg: string;
+        full: string;
+    };
+    space: {
+        1: string;
+        2: string;
+        3: string;
+        4: string;
+        5: string;
+        6: string;
+        7: string;
+        8: string;
+        10: string;
+        12: string;
+        16: string;
+        20: string;
+        40: string;
+        64: string;
+        80: string;
+    };
+}, {
+    height: "space";
+    width: "space";
+    gap: "space";
+    gridGap: "space";
+    columnGap: "space";
+    gridColumnGap: "space";
+    rowGap: "space";
+    gridRowGap: "space";
+    inset: "space";
+    insetBlock: "space";
+    insetBlockEnd: "space";
+    insetBlockStart: "space";
+    insetInline: "space";
+    insetInlineEnd: "space";
+    insetInlineStart: "space";
+    margin: "space";
+    marginTop: "space";
+    marginRight: "space";
+    marginBottom: "space";
+    marginLeft: "space";
+    marginBlock: "space";
+    marginBlockEnd: "space";
+    marginBlockStart: "space";
+    marginInline: "space";
+    marginInlineEnd: "space";
+    marginInlineStart: "space";
+    padding: "space";
+    paddingTop: "space";
+    paddingRight: "space";
+    paddingBottom: "space";
+    paddingLeft: "space";
+    paddingBlock: "space";
+    paddingBlockEnd: "space";
+    paddingBlockStart: "space";
+    paddingInline: "space";
+    paddingInlineEnd: "space";
+    paddingInlineStart: "space";
+    scrollMargin: "space";
+    scrollMarginTop: "space";
+    scrollMarginRight: "space";
+    scrollMarginBottom: "space";
+    scrollMarginLeft: "space";
+    scrollMarginBlock: "space";
+    scrollMarginBlockEnd: "space";
+    scrollMarginBlockStart: "space";
+    scrollMarginInline: "space";
+    scrollMarginInlineEnd: "space";
+    scrollMarginInlineStart: "space";
+    scrollPadding: "space";
+    scrollPaddingTop: "space";
+    scrollPaddingRight: "space";
+    scrollPaddingBottom: "space";
+    scrollPaddingLeft: "space";
+    scrollPaddingBlock: "space";
+    scrollPaddingBlockEnd: "space";
+    scrollPaddingBlockStart: "space";
+    scrollPaddingInline: "space";
+    scrollPaddingInlineEnd: "space";
+    scrollPaddingInlineStart: "space";
+    top: "space";
+    right: "space";
+    bottom: "space";
+    left: "space";
+    fontSize: "fontSizes";
+    background: "colors";
+    backgroundColor: "colors";
+    backgroundImage: "colors";
+    borderImage: "colors";
+    border: "colors";
+    borderBlock: "colors";
+    borderBlockEnd: "colors";
+    borderBlockStart: "colors";
+    borderBottom: "colors";
+    borderBottomColor: "colors";
+    borderColor: "colors";
+    borderInline: "colors";
+    borderInlineEnd: "colors";
+    borderInlineStart: "colors";
+    borderLeft: "colors";
+    borderLeftColor: "colors";
+    borderRight: "colors";
+    borderRightColor: "colors";
+    borderTop: "colors";
+    borderTopColor: "colors";
+    caretColor: "colors";
+    color: "colors";
+    columnRuleColor: "colors";
+    outline: "colors";
+    outlineColor: "colors";
+    fill: "colors";
+    stroke: "colors";
+    textDecorationColor: "colors";
+    fontFamily: "fonts";
+    fontWeight: "fontWeights";
+    lineHeight: "lineHeights";
+    letterSpacing: "letterSpacings";
+    blockSize: "sizes";
+    minBlockSize: "sizes";
+    maxBlockSize: "sizes";
+    inlineSize: "sizes";
+    minInlineSize: "sizes";
+    maxInlineSize: "sizes";
+    minWidth: "sizes";
+    maxWidth: "sizes";
+    minHeight: "sizes";
+    maxHeight: "sizes";
+    flexBasis: "sizes";
+    gridTemplateColumns: "sizes";
+    gridTemplateRows: "sizes";
+    borderWidth: "borderWidths";
+    borderTopWidth: "borderWidths";
+    borderLeftWidth: "borderWidths";
+    borderRightWidth: "borderWidths";
+    borderBottomWidth: "borderWidths";
+    borderStyle: "borderStyles";
+    borderTopStyle: "borderStyles";
+    borderLeftStyle: "borderStyles";
+    borderRightStyle: "borderStyles";
+    borderBottomStyle: "borderStyles";
+    borderRadius: "radii";
+    borderTopLeftRadius: "radii";
+    borderTopRightRadius: "radii";
+    borderBottomRightRadius: "radii";
+    borderBottomLeftRadius: "radii";
+    boxShadow: "shadows";
+    textShadow: "shadows";
+    transition: "transitions";
+    zIndex: "zIndices";
+}, {}>>;
+
+interface TooltipProps extends ComponentProps<typeof TooltipContainer> {
+    children: ReactNode;
+    content: ReactNode;
+}
+declare function Tooltip({ children, content, ...props }: TooltipProps): JSX.Element;
+declare namespace Tooltip {
+    var displayName: string;
+}
+
+declare const TooltipProvider: _stitches_react_types_styled_component.StyledComponent<react.FC<Tooltip$1.TooltipProviderProps>, {}, {}, _stitches_react_types_css_util.CSS<{}, {
+    colors: {
+        white: string;
+        black: string;
+        gray100: string;
+        gray200: string;
+        gray400: string;
+        gray500: string;
+        gray600: string;
+        gray700: string;
+        gray800: string;
+        gray900: string;
+        ignite300: string;
+        ignite500: string;
+        ignite700: string;
+        ignite900: string;
+        TEST: string;
+    };
+    fontSizes: {
+        xxs: string;
+        xs: string;
+        sm: string;
+        md: string;
+        lg: string;
+        xl: string;
+        '2xl': string;
+        '4xl': string;
+        '5xl': string;
+        '6xl': string;
+        '7xl': string;
+        '8xl': string;
+        '9xl': string;
+    };
+    fontWeights: {
+        regular: string;
+        medium: string;
+        bold: string;
+    };
+    fonts: {
+        default: string;
+        code: string;
+        inter: string;
+    };
+    lineHeights: {
+        shorter: string;
+        short: string;
+        base: string;
+        tall: string;
+    };
+    radii: {
+        px: string;
+        xs: string;
+        sm: string;
+        md: string;
+        lg: string;
+        full: string;
+    };
+    space: {
+        1: string;
+        2: string;
+        3: string;
+        4: string;
+        5: string;
+        6: string;
+        7: string;
+        8: string;
+        10: string;
+        12: string;
+        16: string;
+        20: string;
+        40: string;
+        64: string;
+        80: string;
+    };
+}, {
+    height: "space";
+    width: "space";
+    gap: "space";
+    gridGap: "space";
+    columnGap: "space";
+    gridColumnGap: "space";
+    rowGap: "space";
+    gridRowGap: "space";
+    inset: "space";
+    insetBlock: "space";
+    insetBlockEnd: "space";
+    insetBlockStart: "space";
+    insetInline: "space";
+    insetInlineEnd: "space";
+    insetInlineStart: "space";
+    margin: "space";
+    marginTop: "space";
+    marginRight: "space";
+    marginBottom: "space";
+    marginLeft: "space";
+    marginBlock: "space";
+    marginBlockEnd: "space";
+    marginBlockStart: "space";
+    marginInline: "space";
+    marginInlineEnd: "space";
+    marginInlineStart: "space";
+    padding: "space";
+    paddingTop: "space";
+    paddingRight: "space";
+    paddingBottom: "space";
+    paddingLeft: "space";
+    paddingBlock: "space";
+    paddingBlockEnd: "space";
+    paddingBlockStart: "space";
+    paddingInline: "space";
+    paddingInlineEnd: "space";
+    paddingInlineStart: "space";
+    scrollMargin: "space";
+    scrollMarginTop: "space";
+    scrollMarginRight: "space";
+    scrollMarginBottom: "space";
+    scrollMarginLeft: "space";
+    scrollMarginBlock: "space";
+    scrollMarginBlockEnd: "space";
+    scrollMarginBlockStart: "space";
+    scrollMarginInline: "space";
+    scrollMarginInlineEnd: "space";
+    scrollMarginInlineStart: "space";
+    scrollPadding: "space";
+    scrollPaddingTop: "space";
+    scrollPaddingRight: "space";
+    scrollPaddingBottom: "space";
+    scrollPaddingLeft: "space";
+    scrollPaddingBlock: "space";
+    scrollPaddingBlockEnd: "space";
+    scrollPaddingBlockStart: "space";
+    scrollPaddingInline: "space";
+    scrollPaddingInlineEnd: "space";
+    scrollPaddingInlineStart: "space";
+    top: "space";
+    right: "space";
+    bottom: "space";
+    left: "space";
+    fontSize: "fontSizes";
+    background: "colors";
+    backgroundColor: "colors";
+    backgroundImage: "colors";
+    borderImage: "colors";
+    border: "colors";
+    borderBlock: "colors";
+    borderBlockEnd: "colors";
+    borderBlockStart: "colors";
+    borderBottom: "colors";
+    borderBottomColor: "colors";
+    borderColor: "colors";
+    borderInline: "colors";
+    borderInlineEnd: "colors";
+    borderInlineStart: "colors";
+    borderLeft: "colors";
+    borderLeftColor: "colors";
+    borderRight: "colors";
+    borderRightColor: "colors";
+    borderTop: "colors";
+    borderTopColor: "colors";
+    caretColor: "colors";
+    color: "colors";
+    columnRuleColor: "colors";
+    outline: "colors";
+    outlineColor: "colors";
+    fill: "colors";
+    stroke: "colors";
+    textDecorationColor: "colors";
+    fontFamily: "fonts";
+    fontWeight: "fontWeights";
+    lineHeight: "lineHeights";
+    letterSpacing: "letterSpacings";
+    blockSize: "sizes";
+    minBlockSize: "sizes";
+    maxBlockSize: "sizes";
+    inlineSize: "sizes";
+    minInlineSize: "sizes";
+    maxInlineSize: "sizes";
+    minWidth: "sizes";
+    maxWidth: "sizes";
+    minHeight: "sizes";
+    maxHeight: "sizes";
+    flexBasis: "sizes";
+    gridTemplateColumns: "sizes";
+    gridTemplateRows: "sizes";
+    borderWidth: "borderWidths";
+    borderTopWidth: "borderWidths";
+    borderLeftWidth: "borderWidths";
+    borderRightWidth: "borderWidths";
+    borderBottomWidth: "borderWidths";
+    borderStyle: "borderStyles";
+    borderTopStyle: "borderStyles";
+    borderLeftStyle: "borderStyles";
+    borderRightStyle: "borderStyles";
+    borderBottomStyle: "borderStyles";
+    borderRadius: "radii";
+    borderTopLeftRadius: "radii";
+    borderTopRightRadius: "radii";
+    borderBottomRightRadius: "radii";
+    borderBottomLeftRadius: "radii";
+    boxShadow: "shadows";
+    textShadow: "shadows";
+    transition: "transitions";
+    zIndex: "zIndices";
+}, {}>>;
+interface TooltipProviderProps extends ComponentProps<typeof TooltipProvider> {
+}
+
+export { Avatar, AvatarProps, Box, BoxProps, Button, ButtonProps, Checkbox, CheckboxProps, Heading, HeadingProps, MultiStep, MultiStepProps, Text, TextArea, TextAreaProps, TextInput, TextInputProps, TextProps, Tooltip, TooltipProps, TooltipProvider, TooltipProviderProps };

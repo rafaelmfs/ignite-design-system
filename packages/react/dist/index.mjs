@@ -45,7 +45,8 @@ var colors = {
   ignite300: "#00B37E",
   ignite500: "#00875F",
   ignite700: "#015F43",
-  ignite900: "#00291D"
+  ignite900: "#00291D",
+  TEST: "#00F"
 };
 var space = {
   1: "0.25rem",
@@ -74,7 +75,8 @@ var radii = {
 };
 var fonts = {
   default: "Roboto, sans-serif",
-  code: "monospace"
+  code: "monospace",
+  inter: "Inter, sans-serif"
 };
 var fontSizes = {
   xxs: "0.625rem",
@@ -489,6 +491,44 @@ function MultiStep({ size, currentStep = 1 }) {
   ] });
 }
 MultiStep.displayName = "MultiStep";
+
+// src/components/Tooltip/style.ts
+import * as Tooltip from "@radix-ui/react-tooltip";
+var TooltipProvider = styled(Tooltip.Provider);
+var TooltipContainer = styled(Tooltip.Root);
+var TooltipTrigger = styled(Tooltip.Trigger);
+var TooltipPortal = styled(Tooltip.Portal);
+var TooltipContent = styled(Tooltip.Content, {
+  padding: "$3 $4",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  borderRadius: "$sm",
+  background: "$gray900",
+  color: "$white",
+  fontFamily: "$inter",
+  fontSize: "1rem"
+});
+var TooltipArrow = styled(Tooltip.Arrow);
+
+// src/components/Tooltip/index.tsx
+import { jsx as jsx5, jsxs as jsxs4 } from "react/jsx-runtime";
+function Tooltip2(_a) {
+  var _b = _a, { children, content } = _b, props = __objRest(_b, ["children", "content"]);
+  return /* @__PURE__ */ jsxs4(TooltipContainer, __spreadProps(__spreadValues({}, props), { children: [
+    /* @__PURE__ */ jsx5(TooltipTrigger, { asChild: true, children }),
+    /* @__PURE__ */ jsx5(TooltipPortal, { children: /* @__PURE__ */ jsxs4(TooltipContent, { side: "top", children: [
+      content,
+      /* @__PURE__ */ jsx5(TooltipArrow, { width: 16, height: 8 })
+    ] }) })
+  ] }));
+}
+Tooltip2.displayName = "Tooltip";
+
+// src/components/Tooltip/TooltipProvider.tsx
+import { Provider as Provider2 } from "@radix-ui/react-tooltip";
+var TooltipProvider2 = styled(Provider2);
+TooltipProvider2.displayName = "TooltipProvider";
 export {
   Avatar2 as Avatar,
   Box,
@@ -498,5 +538,7 @@ export {
   MultiStep,
   Text,
   TextArea,
-  TextInput
+  TextInput,
+  Tooltip2 as Tooltip,
+  TooltipProvider2 as TooltipProvider
 };

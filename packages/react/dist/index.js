@@ -63,7 +63,9 @@ __export(src_exports, {
   MultiStep: () => MultiStep,
   Text: () => Text,
   TextArea: () => TextArea,
-  TextInput: () => TextInput
+  TextInput: () => TextInput,
+  Tooltip: () => Tooltip2,
+  TooltipProvider: () => TooltipProvider2
 });
 module.exports = __toCommonJS(src_exports);
 
@@ -82,7 +84,8 @@ var colors = {
   ignite300: "#00B37E",
   ignite500: "#00875F",
   ignite700: "#015F43",
-  ignite900: "#00291D"
+  ignite900: "#00291D",
+  TEST: "#00F"
 };
 var space = {
   1: "0.25rem",
@@ -111,7 +114,8 @@ var radii = {
 };
 var fonts = {
   default: "Roboto, sans-serif",
-  code: "monospace"
+  code: "monospace",
+  inter: "Inter, sans-serif"
 };
 var fontSizes = {
   xxs: "0.625rem",
@@ -526,6 +530,44 @@ function MultiStep({ size, currentStep = 1 }) {
   ] });
 }
 MultiStep.displayName = "MultiStep";
+
+// src/components/Tooltip/style.ts
+var Tooltip = __toESM(require("@radix-ui/react-tooltip"));
+var TooltipProvider = styled(Tooltip.Provider);
+var TooltipContainer = styled(Tooltip.Root);
+var TooltipTrigger = styled(Tooltip.Trigger);
+var TooltipPortal = styled(Tooltip.Portal);
+var TooltipContent = styled(Tooltip.Content, {
+  padding: "$3 $4",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  borderRadius: "$sm",
+  background: "$gray900",
+  color: "$white",
+  fontFamily: "$inter",
+  fontSize: "1rem"
+});
+var TooltipArrow = styled(Tooltip.Arrow);
+
+// src/components/Tooltip/index.tsx
+var import_jsx_runtime5 = require("react/jsx-runtime");
+function Tooltip2(_a) {
+  var _b = _a, { children, content } = _b, props = __objRest(_b, ["children", "content"]);
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(TooltipContainer, __spreadProps(__spreadValues({}, props), { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(TooltipTrigger, { asChild: true, children }),
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(TooltipPortal, { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(TooltipContent, { side: "top", children: [
+      content,
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(TooltipArrow, { width: 16, height: 8 })
+    ] }) })
+  ] }));
+}
+Tooltip2.displayName = "Tooltip";
+
+// src/components/Tooltip/TooltipProvider.tsx
+var import_react_tooltip = require("@radix-ui/react-tooltip");
+var TooltipProvider2 = styled(import_react_tooltip.Provider);
+TooltipProvider2.displayName = "TooltipProvider";
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Avatar,
@@ -536,5 +578,7 @@ MultiStep.displayName = "MultiStep";
   MultiStep,
   Text,
   TextArea,
-  TextInput
+  TextInput,
+  Tooltip,
+  TooltipProvider
 });
