@@ -52,7 +52,23 @@ export default {
 
 export const Primary: StoryObj<ToastProps> = {
   args: {
-    content: 'Toast Opened!',
     title: 'Toast',
+    content: 'Toast Opened!',
+  },
+}
+export const OnOff: StoryObj<ToastProps> = {
+  args: {
+    title: 'Toast',
+    content: 'Toast Opened!',
+    open: true,
+  },
+
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'O toast recebe dois parametros para controlar quando ele será exibido, o open e onOpenChange que é uma função executada qual é exibido e quando ele some',
+      },
+    },
   },
 }
