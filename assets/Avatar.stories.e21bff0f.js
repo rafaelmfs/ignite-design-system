@@ -1,0 +1,2 @@
+import{A as t}from"./index.44c64dd9.js";import"./index.10af94f5.js";import"./iframe.8027bac9.js";import"./index.5fe4575e.js";import"./jsx-runtime.a43b8e8f.js";const e={title:"Data display/Avatar",component:t,args:{src:"https://github.com/diego3g.png",alt:"Rafael Marques"},argTypes:{src:{control:{type:"text"}}}},p={},c={args:{src:void 0}},m=["Primary","WhitFallback"];export{p as Primary,c as WhitFallback,m as __namedExportsOrder,e as default};
+//# sourceMappingURL=Avatar.stories.e21bff0f.js.map
