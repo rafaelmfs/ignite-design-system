@@ -529,6 +529,110 @@ Tooltip2.displayName = "Tooltip";
 import { Provider as Provider2 } from "@radix-ui/react-tooltip";
 var TooltipProvider2 = styled(Provider2);
 TooltipProvider2.displayName = "TooltipProvider";
+
+// src/components/Toast/style.ts
+import * as Toast from "@radix-ui/react-toast";
+var hide = keyframes({
+  from: {
+    opacity: 1
+  },
+  to: {
+    opacity: 0
+  }
+});
+var slideIn2 = keyframes({
+  from: {
+    transform: "translateX(calc(100% + 25px))"
+  },
+  to: {
+    transform: "translateX(0)"
+  }
+});
+var swipeOut = keyframes({
+  from: {
+    transform: "translateX(var(--radix-toast-swipe-end-x))"
+  },
+  to: {
+    transform: "translateX(calc(100% + 25px)"
+  }
+});
+var ToastContainer = styled(Toast.Root, {
+  color: "#FFFFFF",
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "baseline",
+  fontFamily: "$default",
+  width: "360px",
+  padding: "$3 $5",
+  background: "$gray800",
+  border: "1px solid $gray600",
+  borderRadius: "$sm",
+  '&[data-state="open"]': {
+    animation: `${slideIn2} 150ms cubic-bezier(0.16, 1, 0.3, 1)`
+  },
+  '&[data-state="closed"]': {
+    animation: `${hide} 100ms ease-in`
+  },
+  '&[data-swipe="move"]': {
+    transform: `translateX(var(--radix-toast-swipe-move-x))`
+  },
+  '&[data-swipe="cancel"]': {
+    transform: "translateX(0)",
+    transition: "transform 200ms ease-out"
+  },
+  '&[data-swipe="end"]': {
+    animation: `${swipeOut} 100ms ease-out`
+  }
+});
+var ToastTitle = styled(Toast.Title, {
+  color: "$white",
+  fontSize: "$xl",
+  lineHeight: "$Short",
+  fontWeight: "$base"
+});
+var ToastDescription = styled(Toast.Description, {
+  color: "$gray200",
+  fontSize: "$sm",
+  lineHeight: "$base"
+});
+var ToastClose = styled(Toast.Close, {
+  all: "unset",
+  background: "transparent",
+  color: "$gray200",
+  fontSize: "$xl",
+  lineHeight: "$base",
+  "&:hover": {
+    cursor: "pointer"
+  }
+});
+var ToastViewport = styled(Toast.Viewport, {
+  position: "fixed",
+  bottom: "4%",
+  right: "4%"
+});
+
+// src/components/Toast/index.tsx
+import { X } from "phosphor-react";
+import { Fragment, jsx as jsx6, jsxs as jsxs5 } from "react/jsx-runtime";
+function Toast2(_a) {
+  var _b = _a, { title, content } = _b, props = __objRest(_b, ["title", "content"]);
+  return /* @__PURE__ */ jsxs5(Fragment, { children: [
+    /* @__PURE__ */ jsxs5(ToastContainer, __spreadProps(__spreadValues({}, props), { children: [
+      /* @__PURE__ */ jsxs5("div", { className: "toast-container", children: [
+        /* @__PURE__ */ jsx6(ToastTitle, { children: title }),
+        /* @__PURE__ */ jsx6(ToastDescription, { children: content })
+      ] }),
+      /* @__PURE__ */ jsx6(ToastClose, { asChild: true, children: /* @__PURE__ */ jsx6(X, {}) })
+    ] })),
+    /* @__PURE__ */ jsx6(ToastViewport, {})
+  ] });
+}
+Toast2.displayName = "Toast";
+
+// src/components/Toast/ToastProvider.tsx
+import { Provider as Provider3 } from "@radix-ui/react-toast";
+var ToastProvider = styled(Provider3);
+ToastProvider.displayName = "ToastProvider";
 export {
   Avatar2 as Avatar,
   Box,
@@ -539,6 +643,8 @@ export {
   Text,
   TextArea,
   TextInput,
+  Toast2 as Toast,
+  ToastProvider,
   Tooltip2 as Tooltip,
   TooltipProvider2 as TooltipProvider
 };

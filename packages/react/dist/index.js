@@ -64,6 +64,8 @@ __export(src_exports, {
   Text: () => Text,
   TextArea: () => TextArea,
   TextInput: () => TextInput,
+  Toast: () => Toast2,
+  ToastProvider: () => ToastProvider,
   Tooltip: () => Tooltip2,
   TooltipProvider: () => TooltipProvider2
 });
@@ -568,6 +570,110 @@ Tooltip2.displayName = "Tooltip";
 var import_react_tooltip = require("@radix-ui/react-tooltip");
 var TooltipProvider2 = styled(import_react_tooltip.Provider);
 TooltipProvider2.displayName = "TooltipProvider";
+
+// src/components/Toast/style.ts
+var Toast = __toESM(require("@radix-ui/react-toast"));
+var hide = keyframes({
+  from: {
+    opacity: 1
+  },
+  to: {
+    opacity: 0
+  }
+});
+var slideIn2 = keyframes({
+  from: {
+    transform: "translateX(calc(100% + 25px))"
+  },
+  to: {
+    transform: "translateX(0)"
+  }
+});
+var swipeOut = keyframes({
+  from: {
+    transform: "translateX(var(--radix-toast-swipe-end-x))"
+  },
+  to: {
+    transform: "translateX(calc(100% + 25px)"
+  }
+});
+var ToastContainer = styled(Toast.Root, {
+  color: "#FFFFFF",
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "baseline",
+  fontFamily: "$default",
+  width: "360px",
+  padding: "$3 $5",
+  background: "$gray800",
+  border: "1px solid $gray600",
+  borderRadius: "$sm",
+  '&[data-state="open"]': {
+    animation: `${slideIn2} 150ms cubic-bezier(0.16, 1, 0.3, 1)`
+  },
+  '&[data-state="closed"]': {
+    animation: `${hide} 100ms ease-in`
+  },
+  '&[data-swipe="move"]': {
+    transform: `translateX(var(--radix-toast-swipe-move-x))`
+  },
+  '&[data-swipe="cancel"]': {
+    transform: "translateX(0)",
+    transition: "transform 200ms ease-out"
+  },
+  '&[data-swipe="end"]': {
+    animation: `${swipeOut} 100ms ease-out`
+  }
+});
+var ToastTitle = styled(Toast.Title, {
+  color: "$white",
+  fontSize: "$xl",
+  lineHeight: "$Short",
+  fontWeight: "$base"
+});
+var ToastDescription = styled(Toast.Description, {
+  color: "$gray200",
+  fontSize: "$sm",
+  lineHeight: "$base"
+});
+var ToastClose = styled(Toast.Close, {
+  all: "unset",
+  background: "transparent",
+  color: "$gray200",
+  fontSize: "$xl",
+  lineHeight: "$base",
+  "&:hover": {
+    cursor: "pointer"
+  }
+});
+var ToastViewport = styled(Toast.Viewport, {
+  position: "fixed",
+  bottom: "4%",
+  right: "4%"
+});
+
+// src/components/Toast/index.tsx
+var import_phosphor_react3 = require("phosphor-react");
+var import_jsx_runtime6 = require("react/jsx-runtime");
+function Toast2(_a) {
+  var _b = _a, { title, content } = _b, props = __objRest(_b, ["title", "content"]);
+  return /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(import_jsx_runtime6.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(ToastContainer, __spreadProps(__spreadValues({}, props), { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "toast-container", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(ToastTitle, { children: title }),
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(ToastDescription, { children: content })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(ToastClose, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_phosphor_react3.X, {}) })
+    ] })),
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(ToastViewport, {})
+  ] });
+}
+Toast2.displayName = "Toast";
+
+// src/components/Toast/ToastProvider.tsx
+var import_react_toast = require("@radix-ui/react-toast");
+var ToastProvider = styled(import_react_toast.Provider);
+ToastProvider.displayName = "ToastProvider";
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Avatar,
@@ -579,6 +685,8 @@ TooltipProvider2.displayName = "TooltipProvider";
   Text,
   TextArea,
   TextInput,
+  Toast,
+  ToastProvider,
   Tooltip,
   TooltipProvider
 });
